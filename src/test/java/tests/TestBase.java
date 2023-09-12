@@ -10,11 +10,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static com.codeborne.selenide.Selenide.open;
 import static helpers.DriverSettings.configure;
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
-    private static MainPageTest DriverSettings;
+    private static MtsBusinessPageTest DriverSettings;
 
     @BeforeAll
     static void setUp() {
@@ -22,6 +23,7 @@ public class TestBase {
         Configuration.baseUrl = "https://mts.ru";
         configure();
         Configuration.browserSize = "1920x1080";
+        open("");
     }
 
     @AfterEach
